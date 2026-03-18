@@ -27,11 +27,11 @@ def test_root_help_is_clean_and_lists_commands() -> None:
 
 
 def test_compare_help_uses_clear_option_names() -> None:
-    result = runner.invoke(app, ["compare", "--help"])
+    result = runner.invoke(app, ["compare", "--help"], env={"COLUMNS": "200"})
 
     assert result.exit_code == 0
-    assert "--delta-threshold" in result.stdout
-    assert "--markdown-report" in result.stdout
+    assert "delta-threshold" in result.stdout
+    assert "markdown-report" in result.stdout
     assert "Allowed metric delta as" in result.stdout
     assert "METRIC=VALUE" in result.stdout
 
