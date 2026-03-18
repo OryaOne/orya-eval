@@ -1,0 +1,25 @@
+# Demo: intentionally failing threshold configuration for CI behavior.
+# Uses the same dataset as the main classification example, but requires
+# accuracy that this dataset does not reach.
+run_name: Failing classification threshold demo
+description: Intentional CI-style failure example for threshold-based quality gates.
+task_type: classification
+data_path: data.csv
+columns:
+  target: target
+  prediction: prediction
+  probability: probability
+metrics:
+  - accuracy
+  - precision
+  - recall
+  - f1
+  - roc_auc
+thresholds:
+  accuracy: 0.90
+reports:
+  json: reports/failing-results.json
+  markdown: reports/failing-report.md
+metadata:
+  dataset: demo-classification
+  scenario: expected-threshold-failure

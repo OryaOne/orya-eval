@@ -1,0 +1,28 @@
+{
+  "task_type": "classification",
+  "run_name": "classification-candidate",
+  "description": "Sample candidate result for comparison demos.",
+  "data_path": "examples/classification/data.csv",
+  "config_path": "examples/classification/config.yaml",
+  "row_count": 6,
+  "selected_metrics": [
+    "accuracy",
+    "precision",
+    "recall",
+    "f1",
+    "roc_auc"
+  ],
+  "metrics": {
+    "accuracy": 0.83,
+    "precision": 0.84,
+    "recall": 0.83,
+    "f1": 0.82,
+    "roc_auc": 0.94
+  },
+  "thresholds": [],
+  "passed": true,
+  "metadata": {
+    "dataset": "demo-classification"
+  },
+  "generated_at": "2026-03-18T09:05:00+00:00"
+}

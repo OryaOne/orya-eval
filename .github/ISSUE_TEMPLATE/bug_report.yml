@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a reproducible problem with orya-eval.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a bug. A small reproduction helps us fix issues much faster.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the issue and the expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include config snippets, commands, and sample data when possible.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Python version, OS, and install method if relevant.
+      placeholder: Python 3.11 on Ubuntu 24.04, installed with pip install -e ".[dev]"
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: 0.1.0
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error output
+      description: Paste the full error or stack trace if available.
+      render: shell

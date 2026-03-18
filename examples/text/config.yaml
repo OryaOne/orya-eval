@@ -1,0 +1,22 @@
+# Demo: string-output evaluation using JSONL input records.
+# Shows exact match, substring-style matching, token overlap, and similarity.
+run_name: Example text evaluation
+description: Simple string-output evaluation example using JSONL records.
+task_type: text
+data_path: data.jsonl
+columns:
+  reference: reference
+  prediction: prediction
+metrics:
+  - exact_match
+  - contains_match
+  - token_f1
+  - normalized_similarity
+thresholds:
+  exact_match: 0.25
+  contains_match: 0.75
+reports:
+  json: reports/results.json
+  markdown: reports/report.md
+metadata:
+  dataset: demo-text

@@ -1,0 +1,21 @@
+# Demo: small regression evaluation with common numeric error metrics.
+# Shows a passing threshold configuration for MAE and RMSE.
+run_name: Example regression evaluation
+description: Small regression example for local checks and CI.
+task_type: regression
+data_path: data.csv
+columns:
+  target: target
+  prediction: prediction
+metrics:
+  - mae
+  - rmse
+  - r2
+thresholds:
+  mae: 0.25
+  rmse: 0.25
+reports:
+  json: reports/results.json
+  markdown: reports/report.md
+metadata:
+  dataset: demo-regression

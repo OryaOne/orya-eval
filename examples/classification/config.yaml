@@ -1,0 +1,24 @@
+# Demo: binary classification with label predictions and probability scores.
+# Shows weighted precision/recall/F1 and ROC AUC on a small local dataset.
+run_name: Example classification evaluation
+description: Binary classification example with probability scores for ROC AUC.
+task_type: classification
+data_path: data.csv
+columns:
+  target: target
+  prediction: prediction
+  probability: probability
+metrics:
+  - accuracy
+  - precision
+  - recall
+  - f1
+  - roc_auc
+thresholds:
+  accuracy: 0.80
+  roc_auc: 0.95
+reports:
+  json: reports/results.json
+  markdown: reports/report.md
+metadata:
+  dataset: demo-classification
