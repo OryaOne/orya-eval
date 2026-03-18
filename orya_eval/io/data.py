@@ -31,8 +31,7 @@ def load_dataframe(data_path: str | Path) -> pd.DataFrame:
             )
     except ValueError as exc:
         raise DataError(
-            f"Could not read data file '{path}': {exc}. "
-            "Ensure the file is valid CSV or JSONL."
+            f"Could not read data file '{path}': {exc}. Ensure the file is valid CSV or JSONL."
         ) from exc
 
     if frame.empty:

@@ -147,11 +147,7 @@ def _comparison_delta_row(
     delta: float,
     verdict: str,
 ) -> str:
-    return (
-        f"  {metric:<22}"
-        f"{baseline:>10.6f} -> {candidate:>10.6f}  "
-        f"delta {delta:+.6f}  {verdict}"
-    )
+    return f"  {metric:<22}{baseline:>10.6f} -> {candidate:>10.6f}  delta {delta:+.6f}  {verdict}"
 
 
 def _threshold_row(verdict: str, metric: str, expression: str) -> str:

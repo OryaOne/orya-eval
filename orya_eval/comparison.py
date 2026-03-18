@@ -32,8 +32,7 @@ def load_result(result_path: str | Path) -> EvaluationResult:
         payload = json.loads(path.read_text(encoding="utf-8"))
         if not isinstance(payload, dict):
             raise ComparisonError(
-                f"Invalid result file '{path}'. Expected a JSON object created by "
-                "`orya-eval run`."
+                f"Invalid result file '{path}'. Expected a JSON object created by `orya-eval run`."
             )
         return EvaluationResult.model_validate(payload)
     except json.JSONDecodeError as exc:

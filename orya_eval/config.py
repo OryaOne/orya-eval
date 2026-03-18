@@ -149,8 +149,7 @@ def load_config(config_path: str | Path) -> EvalConfig:
     if task_type is None:
         allowed = ", ".join(sorted(_CONFIG_MODELS))
         raise ConfigError(
-            f"Config file '{path}' is missing required field `task_type`. "
-            f"Choose one of: {allowed}."
+            f"Config file '{path}' is missing required field `task_type`. Choose one of: {allowed}."
         )
     if task_type not in _CONFIG_MODELS:
         allowed = ", ".join(sorted(_CONFIG_MODELS))

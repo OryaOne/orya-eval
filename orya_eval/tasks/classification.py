@@ -42,9 +42,7 @@ def evaluate_classification(frame: pd.DataFrame, config: ClassificationConfig) -
                 recall_score(y_true, y_pred, average="weighted", zero_division=0)
             )
         elif metric == "f1":
-            results[metric] = float(
-                f1_score(y_true, y_pred, average="weighted", zero_division=0)
-            )
+            results[metric] = float(f1_score(y_true, y_pred, average="weighted", zero_division=0))
         elif metric == "roc_auc":
             if not columns.probability:
                 raise DataError(
