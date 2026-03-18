@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -27,13 +28,14 @@ def test_root_help_is_clean_and_lists_commands() -> None:
 
 
 def test_compare_help_uses_clear_option_names() -> None:
-    result = runner.invoke(app, ["compare", "--help"], env={"COLUMNS": "200"})
+    result = runner.invoke(app, ["compare", "--help"], env={"COLUMNS": "200"}, color=False)
+    output = re.sub(r"\x1b\[[0-9;]*m", "", result.stdout)
 
     assert result.exit_code == 0
-    assert "delta-threshold" in result.stdout
-    assert "markdown-report" in result.stdout
-    assert "Allowed metric delta as" in result.stdout
-    assert "METRIC=VALUE" in result.stdout
+    assert "delta-threshold" in output
+    assert "markdown-report" in output
+    assert "Allowed metric delta as" in output
+    assert "METRIC=VALUE" in output
 
 
 def test_init_creates_starter_files(tmp_path: Path) -> None:
