@@ -1,12 +1,14 @@
 # orya-eval
 
+[![CI](https://img.shields.io/badge/ci-github_actions-black)](./.github/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](./pyproject.toml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
+
 **Lightweight evaluation and regression checks for ML and AI systems.**
 
 `orya-eval` is a small, focused Python tool for teams that want repeatable evaluation runs without adopting a heavyweight platform. You define an evaluation in YAML, run it locally or in CI, compare results to a baseline, and fail builds when quality drops.
 
-[![CI](https://img.shields.io/badge/ci-github_actions-black)](./.github/workflows/ci.yml)
-[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](./pyproject.toml)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
+
 
 ## 🔎 Overview
 
